@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--视口宽度为设备宽度，不能缩放-->
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<!--qq浏览器下强制横盘或者竖屏显示-->
+		<meta name="x5-orientation" content="portrait" />
+		<!--qq浏览器下是否可以全屏-->
+		<meta name="x5-fullscreen" content="true" />
+		<!--UC浏览器下强制横盘或者竖屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<!--UC浏览器下是否可以全屏-->
+		<meta name="full-screen" content="yes">
+		<!--是否禁止识别手机和邮箱-->
+		<meta name="format-detection" content="telephone=yes, email=no" />
+		<title>快乐购</title>
+		<!--给网站标题添加图标-->
+		<link rel="icon" href="img/icon_fan.png" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/happigo.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript">
+		(function(){
+		    	var html = document.documentElement;
+		    	var hWidth = html.getBoundingClientRect().width;
+//		    	console.log( hWidth );
+				html.style.fontSize = hWidth/15 + "px";
+//				1rem
+		    })()
+		</script>
+		<script type="text/javascript" src="js/happigo.js"></script>
+	</head>
+	<body>
+		<div class="bn">
+			<img src="img/app_ban2_new.png" alt="" class="img"/>
+			<img src="img/app_del_but2_new.png" alt="" class="bn_close"/>
+		</div>
+		<!--顶部导航搜索-->
+		<nav class="top_fix">
+			<div class="top_search">
+				<div class="search_box">
+					<div class="search_con">618年中庆 康宁五件套低至599</div>
+				</div>
+			</div>
+			<div class="top_nav">
+				<div class="nav_box">
+					<ul class="nav_list">
+						<li class="on"><a href="javascript:;">推荐</a></li>
+						<li>
+							<a href="javascript:;">直播
+								<div class="icon_tv">TV</div>
+							</a>
+						</li>
+						<li><a href="javascript:;">值得买</a></li>
+						<li><a href="javascript:;">旗舰店</a></li>
+						<li><a href="javascript:;">严选</a></li>
+						<li><a href="javascript:;">海外直邮</a></li>
+						<li><a href="javascript:;">美妆</a></li>
+						<li><a href="javascript:;">靓搭</a></li>
+						<li><a href="javascript:;">餐厨</a></li>
+						<li><a href="javascript:;">美食</a></li>
+						<li><a href="javascript:;">日用</a></li>
+						<li><a href="javascript:;">家纺</a></li>
+						<li><a href="javascript:;">家电</a></li>
+						<li><a href="javascript:;">一县一品</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--内容主体-->
+		<div class="top_height"></div>
+		<section class="con_body">
+			<!--滑动轮播图-->
+			<div class="carousel">
+				<div class="img_box swiper-container">
+					<ul class="img_list swiper-wrapper">
+						<li class="swiper-slide"><img src="img/main_carousel/05510376938551147.jpg" alt="" /></li>
+						<li class="swiper-slide"><img src="img/main_carousel/05510379278854660.jpg" alt="" /></li>
+						<li class="swiper-slide"><img src="img/main_carousel/05512074397428987.jpg" alt="" /></li>
+						<li class="swiper-slide"><img src="img/main_carousel/05510377634085106.jpg" alt="" /></li>
+						<li class="swiper-slide"><img src="img/main_carousel/05512107422454923.jpg" alt="" /></li>
+						<li class="swiper-slide"><img src="img/main_carousel/05512836648757074_small.jpg" alt="" /></li>
+					</ul>
+				</div>
+				<div class="select_point swiper-pagination">
+					<!--<span class="on"></span>
+					<span ></span>
+					<span ></span>
+					<span ></span>
+					<span ></span>
+					<span ></span>-->
+				</div>
+			</div>
+			<!--今日活动-->
+			<img src="img/b_title1.png" alt="" class="title"/>
+			<section class="today_act">
+				<a href="javascript:;" class="act_img"><img src="img/05509487808164107.jpg"/></a>			
+				<div class="wrap">
+					<ul class="goods_list clearfix" id="goods1">
+						<li>
+							<a href="detail.html"><img src="img/main_scroll/1_main_221255_360.jpg" alt="" /></a>
+							<div class="img_info">兰芝自然舒润防晒霜 SPF30/PA++ 50ml</div>
+							<div class="price">¥159
+								<span>¥299</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_221391_360.jpg" alt="" />
+							<div class="img_info">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</div>
+							<div class="price">¥499
+								<span>¥599</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_222066z_360.jpg" alt="" />
+							<div class="img_info">RE:CIPE 水晶防晒喷雾spf50 150ml 户外全身防水防晒霜男女宝宝可</div>
+							<div class="price">¥899
+								<span>¥999</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_222409_360.jpg" alt="" />
+							<div class="img_info">怡思丁多维光护沁融防晒液50ml SPF30+</div>
+							<div class="price">¥999
+								<span>¥1099</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_222412_360.jpg" alt="" />
+							<div class="img_info">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</div>
+							<div class="price">¥499
+								<span>¥599</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_222416a_360.jpg" alt="" />
+							<div class="img_info">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</div>
+							<div class="price">¥699
+								<span>¥899</span>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>查看更多</span>
+								<em>See All</em>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="today_act">
+				<a href="javascript:;" class="act_img"><img src="img/05509487808164107.jpg"/></a>			
+				<div class="wrap">
+					<ul class="goods_list clearfix" id="goods2">
+						<li>
+							<img src="img/main_scroll/1_main_221265_360.jpg" alt="" />
+							<div class="img_info">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</div>
+							<div class="price">¥1599
+								<span>¥599</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_222944_360.jpg" alt="" />
+							<div class="img_info">RE:CIPE 水晶防晒喷雾spf50 150ml 户外全身防水防晒霜男女宝宝可</div>
+							<div class="price">¥1599
+								<span>¥599</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_222066z_360.jpg" alt="" />
+							<div class="img_info">怡思丁多维光护沁融防晒液50ml SPF30+</div>
+							<div class="price">¥1599
+								<span>¥599</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_222409_360.jpg" alt="" />
+							<div class="img_info">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</div>
+							<div class="price">¥1599
+								<span>¥599</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_222412_360.jpg" alt="" />
+							<div class="img_info">怡思丁多维光护沁融防晒液50ml SPF30+</div>
+							<div class="price">¥1599
+								<span>¥599</span>
+							</div>
+						</li>
+						<li>
+							<img src="img/main_scroll/1_main_222416a_360.jpg" alt="" />
+							<div class="img_info">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</div>
+							<div class="price">¥1599
+								<span>¥599</span>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span>查看更多</span>
+								<em>See All</em>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!--优选好物-->
+			<img src="img/b_title3.png" class="title"/>
+			<section class="good_prod clearfix">
+				<div class="items">
+					<div class="g_img">
+						<img src="img/1_main_222408_360.jpg"/>
+					</div>
+					<div class="g_info">
+						<p class="g-dis">全身可水洗  可更换电池 性价比更高</p>
+						<p class="g-name">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</p>
+						<p class="g-price">￥389<span>￥599</span></p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="g_img">
+						<img src="img/1_main_221807_360.jpg"/>
+					</div>
+					<div class="g_info">
+						<p class="g-dis">东方气韵 生自天然 肌肤自由呼吸</p>
+						<p class="g-name">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</p>
+						<p class="g-price">￥389<span>￥599</span></p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="g_img">
+						<img src="img/1_main_215991z_360.jpg"/>
+					</div>
+					<div class="g_info">
+						<p class="g-dis">全身可水洗  可更换电池 性价比更高</p>
+						<p class="g-name">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</p>
+						<p class="g-price">￥389<span>￥599</span></p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="g_img">
+						<img src="img/1_main_210215z_360.jpg"/>
+					</div>
+					<div class="g_info">
+						<p class="g-dis">东方气韵 生自天然 肌肤自由呼吸</p>
+						<p class="g-name">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</p>
+						<p class="g-price">￥389<span>￥599</span></p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="g_img">
+						<img src="img/1_main_222416a_360.jpg"/>
+					</div>
+					<div class="g_info">
+						<p class="g-dis">全身可水洗  可更换电池 性价比更高</p>
+						<p class="g-name">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</p>
+						<p class="g-price">￥389<span>￥599</span></p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="g_img">
+						<img src="img/1_main_222409_360.jpg"/>
+					</div>
+					<div class="g_info">
+						<p class="g-dis">全身可水洗  可更换电池 性价比更高</p>
+						<p class="g-name">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</p>
+						<p class="g-price">￥389<span>￥599</span></p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="g_img">
+						<img src="img/1_main_215991z_360.jpg"/>
+					</div>
+					<div class="g_info">
+						<p class="g-dis">全身可水洗  可更换电池 性价比更高</p>
+						<p class="g-name">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</p>
+						<p class="g-price">￥389<span>￥599</span></p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="g_img">
+						<img src="img/1_main_210215z_360.jpg"/>
+					</div>
+					<div class="g_info">
+						<p class="g-dis">全身可水洗  可更换电池 性价比更高</p>
+						<p class="g-name">FOREO Luna play plus 露娜玩趣增强版清洁美容洗脸洁面仪</p>
+						<p class="g-price">￥389<span>￥599</span></p>
+					</div>
+				</div>
+			</section>
+		</section>
+		<!--公共底部导航-->
+		<div class="bt-space"></div>
+		<footer class="main_nav">
+			<ul class="clearfix">
+				<li>
+					<a href="javascript:;">
+						<img src="img/nav_1_2.png" alt="" />
+						<p class="on">首页</p>
+					</a>
+				</li>
+				<li>
+					<a href="brand.html">
+						<img src="img/nav_2_1.png" alt="" />
+						<p>分类</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/nav_4_1.png" alt="" />
+						<p>购物车</p>
+					</a>
+				</li>
+				<li>
+					<a href="user.html">
+						<img src="img/nav_5_1.png" alt="" />
+						<p>我的</p>
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<script>
+			$(function(){
+				//轮播图
+				var mySwiper = new Swiper('.swiper-container',{
+					pagination: '.swiper-pagination',
+					paginationClickable: true,
+					loop:true,
+					autoplay:2500,
+					autoplayDisableOnInteraction:false
+				});
+			});
+		</script>
+	</body>
+</html>

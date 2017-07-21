@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--视口宽度为设备宽度，不能缩放-->
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<!--qq浏览器下强制横盘或者竖屏显示-->
+		<meta name="x5-orientation" content="portrait" />
+		<!--qq浏览器下是否可以全屏-->
+		<meta name="x5-fullscreen" content="true" />
+		<!--UC浏览器下强制横盘或者竖屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<!--UC浏览器下是否可以全屏-->
+		<meta name="full-screen" content="yes">
+		<!--是否禁止识别手机和邮箱-->
+		<meta name="format-detection" content="telephone=yes, email=no" />
+		<title>快乐购  分类列表</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/happigo.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+		(function(){
+		    	var html = document.documentElement;
+		    	var hWidth = html.getBoundingClientRect().width;
+//		    	console.log( hWidth );
+				html.style.fontSize = hWidth/15 + "px";
+//				1rem
+		    })()
+		</script>
+		<script type="text/javascript" src="js/happigo.js"></script>
+	</head>
+	<body>
+		<!--顶部导航搜索-->
+		<nav class="brand_fix clearfix">
+			<div class="title_nav">
+				<a href="index.html" class="back">
+					<img src="img/ico_fh.png"/>
+				</a>
+				<div class="search_input">
+					<span class="icon_s"><img src="img/ico_18.png"/></span>
+					<input type="text" placeholder="搜索商品、品牌"/>
+				</div>
+			</div>
+			<div class="brand_nav">
+				<ul>
+					<li class="t1 on">
+						<div>
+							<img src="img/ico_19_2.png"/>分类
+						</div>
+					</li>
+					<li class="t2">
+						<div>
+							<img src="img/ico_20_1.png"/>品牌
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!--内容分类主体-->
+		<section class="con_body">
+			<div class="brand_height"></div>
+			<!--个人美妆-->
+			<section class="sort_list">
+				<a href="javascript:;" class="list_img"><img src="img/catogory/1097_bar.jpg"/></a>			
+				<div class="sort_wrap">
+					<ul class="sorts width1 clearfix" id="silder1">
+						<li>
+							<img src="img/catogory/makeup/1098.jpg" alt="" />
+							<div class="img_info">面部护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/makeup/1099.jpg" alt="" />
+							<div class="img_info">美发护发</div>							
+						</li>
+						<li>
+							<img src="img/catogory/makeup/1100.jpg" alt="" />
+							<div class="img_info">身体护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/makeup/1101.jpg" alt="" />
+							<div class="img_info">口腔护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/makeup/1124.jpg" alt="" />
+							<div class="img_info">美容工具</div>							
+						</li>
+						<li>
+							<img src="img/catogory/makeup/1103.jpg" alt="" />
+							<div class="img_info">香水彩妆</div>							
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!--厨房日用-->
+			<section class="sort_list">
+				<a href="javascript:;" class="list_img"><img src="img/catogory/1057_bar.jpg"/></a>			
+				<div class="sort_wrap">
+					<ul class="sorts width2 clearfix" id="silder2">
+						<li>
+							<img src="img/catogory/kitchen/1062.jpg" alt="" />
+							<div class="img_info">面部护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/kitchen/1063.jpg" alt="" />
+							<div class="img_info">美发护发</div>							
+						</li>
+						<li>
+							<img src="img/catogory/kitchen/1064.jpg" alt="" />
+							<div class="img_info">身体护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/kitchen/1066.jpg" alt="" />
+							<div class="img_info">口腔护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/kitchen/1125.jpg" alt="" />
+							<div class="img_info">美容工具</div>							
+						</li>
+						<li>
+							<img src="img/catogory/kitchen/1126.jpg" alt="" />
+							<div class="img_info">香水彩妆</div>							
+						</li>
+						<li>
+							<img src="img/catogory/kitchen/1127.jpg" alt="" />
+							<div class="img_info">香水彩妆</div>							
+						</li>
+						<li>
+							<img src="img/catogory/kitchen/1128.jpg" alt="" />
+							<div class="img_info">香水彩妆</div>							
+						</li>
+						<li>
+							<img src="img/catogory/kitchen/1129.jpg" alt="" />
+							<div class="img_info">香水彩妆</div>							
+						</li>
+						<li>
+							<img src="img/catogory/kitchen/1130.jpg" alt="" />
+							<div class="img_info">香水彩妆</div>							
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!--食品保健-->
+			<section class="sort_list">
+				<a href="javascript:;" class="list_img"><img src="img/catogory/1088_bar.jpg"/></a>			
+				<div class="sort_wrap">
+					<ul class="sorts width1 clearfix" id="silder3">
+						<li>
+							<img src="img/catogory/health/1089.jpg" alt="" />
+							<div class="img_info">面部护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/health/1092.jpg" alt="" />
+							<div class="img_info">美发护发</div>							
+						</li>
+						<li>
+							<img src="img/catogory/health/1093.jpg" alt="" />
+							<div class="img_info">身体护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/health/1094.jpg" alt="" />
+							<div class="img_info">口腔护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/health/1095.jpg" alt="" />
+							<div class="img_info">美容工具</div>							
+						</li>
+						<li>
+							<img src="img/catogory/health/1132.jpg" alt="" />
+							<div class="img_info">美容工具</div>							
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!--服装配饰-->
+			<section class="sort_list">
+				<a href="javascript:;" class="list_img"><img src="img/catogory/1082_bar.jpg"/></a>			
+				<div class="sort_wrap">
+					<ul class="sorts width3 clearfix" id="silder4">
+						<li>
+							<img src="img/catogory/cloth/1133.jpg" alt="" />
+							<div class="img_info">面部护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/cloth/1134.jpg" alt="" />
+							<div class="img_info">美发护发</div>							
+						</li>
+						<li>
+							<img src="img/catogory/cloth/1136.jpg" alt="" />
+							<div class="img_info">身体护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/cloth/1137.jpg" alt="" />
+							<div class="img_info">口腔护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/cloth/1138.jpg" alt="" />
+							<div class="img_info">美容工具</div>							
+						</li>
+						<li>
+							<img src="img/catogory/cloth/1139.jpg" alt="" />
+							<div class="img_info">美容工具</div>							
+						</li>
+						<li>
+							<img src="img/catogory/cloth/1084.jpg" alt="" />
+							<div class="img_info">美容工具</div>							
+						</li>
+						<li>
+							<img src="img/catogory/cloth/1085.jpg" alt="" />
+							<div class="img_info">美容工具</div>							
+						</li>
+						<li>
+							<img src="img/catogory/cloth/1086.jpg" alt="" />
+							<div class="img_info">美容工具</div>							
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!--更多分类-->
+			<section class="sort_list">
+				<a href="javascript:;" class="list_img"><img src="img/catogory/1109_bar.jpg"/></a>			
+				<div class="sort_wrap">
+					<ul class="sorts width1 clearfix" id="silder5">
+						<li>
+							<img src="img/catogory/1123.jpg" alt="" />
+							<div class="img_info">面部护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/1135.jpg" alt="" />
+							<div class="img_info">美发护发</div>							
+						</li>
+						<li>
+							<img src="img/catogory/1122.jpg" alt="" />
+							<div class="img_info">身体护理</div>							
+						</li>
+						<li>
+							<img src="img/catogory/1110.jpg" alt="" />
+							<div class="img_info">其他</div>							
+						</li>
+				</div>
+			</section>
+		</section>	
+		<!--内容品牌主体-->
+		<section class="ch_box">
+			<div class="brand_height"></div>
+			<div class="top_brand clearfix">
+				<div class="b_list">
+					<a href="javascript:;"><img src="img/brand/05473191852972959.jpg"/></a>
+				</div>
+				<div class="b_list">
+					<a href="javascript:;"><img src="img/brand/05473192079358977.jpg"/></a>
+				</div>
+				<div class="b_list">
+					<a href="javascript:;"><img src="img/brand/05473193932929243.jpg"/></a>
+				</div>
+				<div class="b_list">
+					<a href="javascript:;"><img src="img/brand/05473195449432209.jpg"/></a>
+				</div>
+				<div class="see_more">
+					<a href="javascript:;">更多品牌推荐 ></a>
+				</div>
+			</div>
+			<div class="letter"></div>
+			<div class="p_sort_box clearfix">
+				<div class="sort_letter">A</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146627278145118.jpg" alt="" />
+						</div>
+						<div class="num_name">奥睿科</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626901897479.jpg" alt="" />
+						</div>
+						<div class="num_name">爱思得</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05127404438335690.jpg" alt="" />
+						</div>
+						<div class="num_name">爱慕莎</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05137979760090336.jpg" alt="" />
+						</div>
+						<div class="num_name">爱惠浦</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626200894016.jpg" alt="" />
+						</div>
+						<div class="num_name">艾美特</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05512097354274411.jpg" alt="" />
+						</div>
+						<div class="num_name">澳洲惠宝</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440393900178965.jpg" alt="" />
+						</div>
+						<div class="num_name">阿诗玛（Ashima）</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440361044948968.jpg" alt="" />
+						</div>
+						<div class="num_name">安娜图丽</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05126750102051857.jpg" alt="" />
+						</div>
+						<div class="num_name">爱敬</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05515279225139802.jpg" alt="" />
+						</div>
+						<div class="num_name">AMPM</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05510473232649391.jpg" alt="" />
+						</div>
+						<div class="num_name">安在azai</div>
+					</a>
+				</div>
+				<div class="sort_letter">B</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146627278145118.jpg" alt="" />
+						</div>
+						<div class="num_name">奥睿科</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626901897479.jpg" alt="" />
+						</div>
+						<div class="num_name">爱思得</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05127404438335690.jpg" alt="" />
+						</div>
+						<div class="num_name">爱慕莎</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05137979760090336.jpg" alt="" />
+						</div>
+						<div class="num_name">爱惠浦</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626200894016.jpg" alt="" />
+						</div>
+						<div class="num_name">艾美特</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05512097354274411.jpg" alt="" />
+						</div>
+						<div class="num_name">澳洲惠宝</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440393900178965.jpg" alt="" />
+						</div>
+						<div class="num_name">阿诗玛（Ashima）</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440361044948968.jpg" alt="" />
+						</div>
+						<div class="num_name">安娜图丽</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05126750102051857.jpg" alt="" />
+						</div>
+						<div class="num_name">爱敬</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05515279225139802.jpg" alt="" />
+						</div>
+						<div class="num_name">AMPM</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05510473232649391.jpg" alt="" />
+						</div>
+						<div class="num_name">安在azai</div>
+					</a>
+				</div>
+				<div class="sort_letter">C</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146627278145118.jpg" alt="" />
+						</div>
+						<div class="num_name">奥睿科</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626901897479.jpg" alt="" />
+						</div>
+						<div class="num_name">爱思得</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05127404438335690.jpg" alt="" />
+						</div>
+						<div class="num_name">爱慕莎</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05137979760090336.jpg" alt="" />
+						</div>
+						<div class="num_name">爱惠浦</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626200894016.jpg" alt="" />
+						</div>
+						<div class="num_name">艾美特</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05512097354274411.jpg" alt="" />
+						</div>
+						<div class="num_name">澳洲惠宝</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440393900178965.jpg" alt="" />
+						</div>
+						<div class="num_name">阿诗玛（Ashima）</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440361044948968.jpg" alt="" />
+						</div>
+						<div class="num_name">安娜图丽</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05126750102051857.jpg" alt="" />
+						</div>
+						<div class="num_name">爱敬</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05515279225139802.jpg" alt="" />
+						</div>
+						<div class="num_name">AMPM</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05510473232649391.jpg" alt="" />
+						</div>
+						<div class="num_name">安在azai</div>
+					</a>
+				</div>
+				<div class="sort_letter">D</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146627278145118.jpg" alt="" />
+						</div>
+						<div class="num_name">奥睿科</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626901897479.jpg" alt="" />
+						</div>
+						<div class="num_name">爱思得</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05127404438335690.jpg" alt="" />
+						</div>
+						<div class="num_name">爱慕莎</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05137979760090336.jpg" alt="" />
+						</div>
+						<div class="num_name">爱惠浦</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626200894016.jpg" alt="" />
+						</div>
+						<div class="num_name">艾美特</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05512097354274411.jpg" alt="" />
+						</div>
+						<div class="num_name">澳洲惠宝</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440393900178965.jpg" alt="" />
+						</div>
+						<div class="num_name">阿诗玛（Ashima）</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440361044948968.jpg" alt="" />
+						</div>
+						<div class="num_name">安娜图丽</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05126750102051857.jpg" alt="" />
+						</div>
+						<div class="num_name">爱敬</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05515279225139802.jpg" alt="" />
+						</div>
+						<div class="num_name">AMPM</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05510473232649391.jpg" alt="" />
+						</div>
+						<div class="num_name">安在azai</div>
+					</a>
+				</div>
+				<div class="sort_letter">E</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146627278145118.jpg" alt="" />
+						</div>
+						<div class="num_name">奥睿科</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626901897479.jpg" alt="" />
+						</div>
+						<div class="num_name">爱思得</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05127404438335690.jpg" alt="" />
+						</div>
+						<div class="num_name">爱慕莎</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05137979760090336.jpg" alt="" />
+						</div>
+						<div class="num_name">爱惠浦</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05146626200894016.jpg" alt="" />
+						</div>
+						<div class="num_name">艾美特</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05512097354274411.jpg" alt="" />
+						</div>
+						<div class="num_name">澳洲惠宝</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440393900178965.jpg" alt="" />
+						</div>
+						<div class="num_name">阿诗玛（Ashima）</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05440361044948968.jpg" alt="" />
+						</div>
+						<div class="num_name">安娜图丽</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05126750102051857.jpg" alt="" />
+						</div>
+						<div class="num_name">爱敬</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05515279225139802.jpg" alt="" />
+						</div>
+						<div class="num_name">AMPM</div>
+					</a>
+				</div>
+				<div class="sort_list">
+					<a href="javascript:;">
+						<div class="p_img">
+							<img src="img/brand/05510473232649391.jpg" alt="" />
+						</div>
+						<div class="num_name">安在azai</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--公共底部导航-->
+		<div class="bt-space"></div>
+		<footer class="main_nav">
+			<ul class="clearfix">
+				<li>
+					<a href="index.html">
+						<img src="img/nav_1_1.png" alt="" />
+						<p>首页</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/nav_2_2.png" alt="" />
+						<p class="on">分类</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/nav_4_1.png" alt="" />
+						<p>购物车</p>
+					</a>
+				</li>
+				<li>
+					<a href="user.html">
+						<img src="img/nav_5_1.png" alt="" />
+						<p>我的</p>
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<script>
+			$(function(){
+				//跳转搜索
+				$('.search_input input').focus(function(){
+					window.location.href = 'search.html';
+				});
+				
+				//类型切换操作
+				$('.brand_nav .t1').on('touchstart',function(){
+					$(this).addClass('on').siblings().removeClass('on');
+					$('.brand_nav .t1 img').attr('src','img/ico_19_2.png');
+					$('.brand_nav .t2 img').attr('src','img/ico_20_1.png');
+//					$('.con_body').css('display','block');
+//					$('.ch_box').css('display','none');
+					$('.con_body').fadeIn();
+					$('.ch_box').fadeOut();
+				});
+				$('.brand_nav .t2').on('touchstart',function(){
+					$(this).addClass('on').siblings().removeClass('on');
+					$('.brand_nav .t2 img').attr('src','img/ico_20_2.png');
+					$('.brand_nav .t1 img').attr('src','img/ico_19_1.png');
+//					$('.con_body').css('display','none');
+//					$('.ch_box').css('display','block');
+					$('.con_body').fadeOut();
+					$('.ch_box').fadeIn();
+				});
+			});
+		</script>
+	</body>
+</html>

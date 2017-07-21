@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--视口宽度为设备宽度，不能缩放-->
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<!--qq浏览器下强制横盘或者竖屏显示-->
+		<meta name="x5-orientation" content="portrait" />
+		<!--qq浏览器下是否可以全屏-->
+		<meta name="x5-fullscreen" content="true" />
+		<!--UC浏览器下强制横盘或者竖屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<!--UC浏览器下是否可以全屏-->
+		<meta name="full-screen" content="yes">
+		<!--是否禁止识别手机和邮箱-->
+		<meta name="format-detection" content="telephone=yes, email=no" />
+		<title>快乐购  用户注册</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/happigo.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+		(function(){
+		    	var html = document.documentElement;
+		    	var hWidth = html.getBoundingClientRect().width;
+//		    	console.log( hWidth );
+				html.style.fontSize = hWidth/15 + "px";
+//				1rem
+		    })()
+		</script>
+		<script type="text/javascript" src="js/happigo.js"></script>
+		
+	</head>
+	<body class="bg">
+		<nav class="title_nav">
+			<a href="login.html">
+				<img src="img/ico_fh.png"/>
+			</a>
+			<p class="txt">注册</p>
+		</nav>
+		<!--注册表单-->
+		<section class="login_box">
+			<!--<form action="post" id="reg_form">-->
+			<div class="reg_box" id="reg_form">
+				<div class="img_code clearfix">
+					<span class="icon_code"><img src="img/ico_tx.png"/></span>
+					<input type="text" name="" placeholder="请输入图形验证码" />
+					<canvas id="canvas" class="code">浏览器不支持</canvas>
+					<span class="input_tip"></span>
+					<script type="text/javascript" src="js/canvas_code.js"></script>
+					<script>
+						$(function(){
+							$('.code').on('touchstart',function(){
+								var code = changeCode();
+//								console.log(code);
+							});
+						});
+					</script>
+				</div>
+				<div class="user">
+					<span class="icon_ph"><img src="img/ico_mob.png"/></span>
+					<input type="text" name="" placeholder="请输入手机号" />
+					<span class="input_tip"></span>
+				</div>
+				
+				<div class="ph_code clearfix">
+					<span class="icon_code"><img src="img/ico_ma.png"/></span>
+					<input type="text" name="" placeholder="请输入验证码" />
+					<p class="p_code pull-right">获取验证码</p>
+				</div>
+				<div class="pwd">
+					<span class="icon_pwd"><img src="img/ico_lock.png"/></span>
+					<input type="password" name="" placeholder="请输入密码" id="password"/>
+					<span class="eye"><img src="img/eye1.png"/></span>
+					<span class="input_tip"></span>
+					<script>
+						$(function(){
+							var change = false;
+							$('.eye').on('touchstart',function(){
+								if(!change){
+									$('#password').attr('type','text');
+									$('.eye img').attr('src','img/eye2.png');
+								}else{
+									$('#password').attr('type','password');
+									$('.eye img').attr('src','img/eye1.png');
+								}
+								change = !change;
+							});
+						});
+					</script>
+				</div>
+				<button class="btn_reg btn_on">注册</button>
+			<!--</form>-->
+			</div>
+		</section>
+		<section class="protocol">
+			<p>注册即表示同意快乐购<a class="sa" href="/service.html">《用户服务协议》</a>条款</p>
+		</section>
+		<section class="login_bottom">
+			<p class="tip_info"></p>
+			<p>遇到问题？请联系客服: <a href="tel:400-705-1111">400-705-1111</a></p>
+		</section>
+		<script>
+			$(function(){
+				var code = changeCode();
+				//加载页面后打开数据库
+				var db = openDatabase('happigodb','1.0','text db','1024*1024');
+				$('#reg_form input').eq(1).keyup(function(){
+
+					if(!(/^1[34578]\d{9}$/.test($('#reg_form input').eq(1).val()))){
+
+						$('.input_tip').eq(1).addClass('wrong').removeClass('correct');
+						
+					}else{
+
+						$('.input_tip').eq(1).addClass('correct').removeClass('wrong');
+						var phone = $('#reg_form input').eq(1).val();
+						db.transaction(function(contex){
+							//向数据库发送查询请求
+							contex.executeSql('select * from userinfo',[],function(con,data){
+								var len = data.rows.length,i;
+								for(var i=0;i<len;i++){
+									//验证用户是否匹配存在
+//									console.log(data.rows.item(i).phone+':'+data.rows.item(i).password);
+									if(phone==data.rows.item(i).phone){
+										messageTip('.tip_info','该用户已经存在！');
+									}
+								}
+							});
+						});
+					}
+				});
+				
+				//获取手机验证码
+				var timer = null;
+				$('.p_code').on('touchstart',function(){
+					//判断手机号码是不是空
+					if($('#reg_form input').eq(1).val()==''){
+						//为空
+						messageTip('.tip_info','手机号码不能为空！');
+					}else{
+						if(!(/^1[34578]\d{9}$/.test($('#reg_form input').eq(1).val()))){
+
+							messageTip('.tip_info','手机号码输入有误！');
+						}else{
+							var code = String(parseInt(Math.random()*10))+parseInt(Math.random()*10)+parseInt(Math.random()*10)+parseInt(Math.random()*10);
+							var count=10;
+							timer = setInterval(function(){
+								var i = count--;
+								$('.p_code').html('('+i+'s)后重新发送');
+//								console.log(i);
+								if(i==0){
+									window.clearInterval(timer);
+									$('#reg_form input').eq(2).val(code);
+
+								}
+							},1000);
+							
+						}
+					}
+				});
+				//判断密码位数是否足够
+				$('#reg_form input').eq(3).keyup(function(){
+					if($('#reg_form input').eq(3).val().length<6){
+						$('.input_tip').eq(2).addClass('wrong').removeClass('correct');
+
+					}else{
+						$('.input_tip').eq(2).addClass('correct').removeClass('wrong');
+					}
+				});
+				
+				$('.btn_reg').on('touchstart',function(){
+					//注册前向创建数据库
+					db.transaction(function(contex){
+						contex.executeSql('create table if not exists userinfo(uid unique,phone,password)');
+					});
+
+					//取得所有输入的信息
+					var imgCode = $('#reg_form input').eq(0).val();
+					var phone = $('#reg_form input').eq(1).val();
+					var pCode = $('#reg_form input').eq(2).val();
+					var pwd = $('#reg_form input').eq(3).val();
+//					console.log(imgCode+','+phone+','+pCode+','+pwd);
+//					console.log(code);
+					//判断是否都输入
+					if(imgCode&&phone&&pCode&&pwd){
+						//输入信息再判断是否都正确
+						if(pwd.length<6){
+							messageTip('.tip_info','密码位数不足！');
+						}
+						if(imgCode!=code){							
+							messageTip('.tip_info','验证码填写有误！');
+						}
+						if(!(/^1[34578]\d{9}$/.test($('#reg_form input').eq(1).val()))){
+							messageTip('.tip_info','手机号码格式有误！');
+						}
+//						console.log(imgCode==code&&(/^1[34578]\d{9}$/.test($('#reg_form input').eq(1).val()))&&pwd.length>=6);
+						if(imgCode==code&&(/^1[34578]\d{9}$/.test($('#reg_form input').eq(1).val()))&&pwd.length>=6){
+//							console.log('correct');
+							db.transaction(function(contex){
+								//定义是否存在相同用户的变量
+								var exist = true;
+								var uid = 1;
+								//向数据库发送查询请求
+								contex.executeSql('select * from userinfo',[],function(con,data){
+									var len = data.rows.length,i;
+//									console.log(len);
+									//判断表内有没有数据
+									if(len==0){
+										uid = 1;
+									}else{
+										uid = data.rows.item(len-1).uid+1;
+									}
+									//循环验证
+									for(var i=0;i<len;i++){
+										//验证用户是否匹配存在
+//										console.log(data.rows.item(i).phone+':'+data.rows.item(i).password);
+										if(phone==data.rows.item(i).phone){
+											messageTip('.tip_info','该用户已经存在！');
+											//如果存在，值为假
+											exist = !exist;
+										}
+									}
+									if(exist){
+//										console.log(uid);
+
+										//执行数据写入
+										contex.executeSql('insert into userinfo(uid,phone,password) values('+uid+','+phone+','+pwd+')');
+										window.sessionStorage.setItem('userphone',phone);
+										messageTip('.tip_info','注册成功！');
+										$('.btn_reg').html('正在跳转...');
+										setTimeout(function(){
+											window.location.href = 'user.html';
+										},2000);
+									}
+								});
+								//如果存在，就不执行插入操作
+								
+							});
+							
+//							db.transaction(function(contex){
+//								contex.executeSql('create table if not exists userinfo(phone,password)');
+//								contex.executeSql('insert into userinfo(phone,password) values('+phone+','+pwd+')');
+//							});
+//							db.transaction(function(contex){
+//								contex.executeSql('delete from userinfo where phone = 13726908402');
+//							});
+							
+						}
+					}else{
+						if(!pCode){
+							messageTip('.tip_info','验证码不能为空！');
+						}
+						if(!pwd){							
+							messageTip('.tip_info','密码未填写！');
+						}
+						if(!phone){		
+							messageTip('.tip_info','手机号未填写！');
+						}
+						if(!imgCode){		
+							messageTip('.tip_info','图形码未填写！');
+						}
+					}
+					//删除整个数据表
+//					db.transaction(function(contex){
+//						contex.executeSql('drop table userinfo');
+//						contex.executeSql('create table if not exists userinfo(uid unique,phone,password)');
+//						contex.executeSql('insert into userinfo(uid,phone,password) values('+1+','+15813053696+','+654321+')');
+//					
+//					});
+								
+				});
+				//提示信息函数
+				function messageTip(msgbox,msgtext){
+					$(msgbox).animate({"top":-200/50+"rem","opacity":1}).text(msgtext);
+					setTimeout(function(){
+						$('.tip_info').animate({"top":-300/50+"rem","opacity":0});
+					},3000);
+				}
+			});
+		</script>
+	</body>
+</html>

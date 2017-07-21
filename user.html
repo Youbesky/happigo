@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--视口宽度为设备宽度，不能缩放-->
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<!--qq浏览器下强制横盘或者竖屏显示-->
+		<meta name="x5-orientation" content="portrait" />
+		<!--qq浏览器下是否可以全屏-->
+		<meta name="x5-fullscreen" content="true" />
+		<!--UC浏览器下强制横盘或者竖屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<!--UC浏览器下是否可以全屏-->
+		<meta name="full-screen" content="yes">
+		<!--是否禁止识别手机和邮箱-->
+		<meta name="format-detection" content="telephone=yes, email=no" />
+		<title>快乐购  用户信息</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/happigo.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+		(function(){
+		    	var html = document.documentElement;
+		    	var hWidth = html.getBoundingClientRect().width;
+//		    	console.log( hWidth );
+				html.style.fontSize = hWidth/15 + "px";
+//				1rem
+		    })()
+		</script>
+		<script type="text/javascript" src="js/happigo.js"></script>
+		<script>
+			$(function(){
+				var db = openDatabase('happigodb','1.0','text db','1024*1024');
+				var user=window.sessionStorage.getItem('userphone');
+//				console.log(a);
+				$('.useinfo').text(user);
+				if(!user){
+					window.location.href = 'login.html';
+				}
+				$('#logout').on('touchstart',function(){
+					//清除session，返回登录页面
+					window.sessionStorage.clear();
+					window.location.href = 'login.html';
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header class="u_info">
+			<div class="u_tx">
+				<img src="img/user_page/tx.png" alt="" />
+			</div>
+			<div class="u_tx_zx"></div>
+			<div class="u_name"><span class="useinfo"></span> 注册会员</div>
+			<div class="u_more">
+				<img src="img/user_page/us_ico_more.png" alt="" />
+			</div>
+		</header>
+		<!--更多的弹出-->
+		<div class="more_info">
+			<ul>
+				<li>
+					<a href="index.html">首页</a>
+				</li>
+				<li>
+					<a href="javascript:;">购物车</a>
+				</li>
+				<li>
+					<a href="search.html">搜索</a>
+				</li>
+				<li>
+					<a href="brand.html">分类</a>
+				</li>
+				<li>
+					<a href="javascript:;" id="logout">注销</a>
+				</li>
+			</ul>
+		</div>
+		<script>
+			$(function(){
+				$('.u_more').on('touchstart',function(){
+					$('.more_info').slideToggle();
+				});
+			});
+		</script>
+		<section class="u_box">
+			<div class="u_tit">
+				<div class="fl">
+					<img src="img/user_page/us_ico_1.png" alt="" />
+					<p>全部订单</p>
+				</div>
+				<div class="fr">
+					<p>查看全部订单</p>
+					<img src="img/user_page/us_ico_11.png" alt="" />
+				</div>
+			</div>
+			<div class="u_list">
+				<ul>
+					<li>
+						<a href="javascript:;">
+							<img src="img/user_page/us_ico_2.png" alt="" />
+							<p>代付款</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/user_page/us_ico_3.png" alt="" />
+							<p>代收货</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/user_page/us_ico_4.png" alt="" />
+							<p>代评价</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="img/user_page/us_ico_5.png" alt="" />
+							<p>退货/款</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="u_box">
+			<div class="u_tit">
+				<div class="fl">
+					<img src="img/user_page/us_ico_6.png" alt="" />
+					<p>我的资产</p>
+				</div>
+			</div>
+			<div class="u_list clearfix">
+				<div class="u_zc">
+					<p><strong>0</strong></p>
+					<p>积分</p>
+				</div>
+				<div class="u_zc">
+					<p><strong>6</strong></p>
+					<p>优惠券</p>
+				</div>
+				<div class="u_zc_ico">
+					<img src="img/user_page/us_ico_10.png" alt="" />
+				</div>
+			</div>
+		</section>
+		<section class="u_box">
+			<div class="u_tit">
+				<div class="fl">
+					<img src="img/user_page/us_ico_7.png" alt="" />
+					<p>收货地址</p>
+				</div>
+				<div class="fr fr_top">
+					
+					<img src="img/user_page/us_ico_11.png" alt="" />
+				</div>
+			</div>
+			<div class="u_tit">
+				<div class="fl">
+					<img src="img/user_page/us_ico_9.png" alt="" />
+					<p>帮助与反馈</p>
+				</div>
+				<div class="fr fr_top">
+					
+					<img src="img/user_page/us_ico_11.png" alt="" />
+				</div>
+			</div>
+		</section>
+		<!--公共底部导航-->
+		<footer class="main_nav">
+			<ul class="clearfix">
+				<li>
+					<a href="index.html">
+						<img src="img/nav_1_1.png" alt="" />
+						<p>首页</p>
+					</a>
+				</li>
+				<li>
+					<a href="brand.html">
+						<img src="img/nav_2_1.png" alt="" />
+						<p>分类</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/nav_4_1.png" alt="" />
+						<p>购物车</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/nav_5_2.png" alt="" />
+						<p class="on">我的</p>
+					</a>
+				</li>
+			</ul>
+		</footer>
+	</body>
+</html>

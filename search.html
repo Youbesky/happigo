@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--视口宽度为设备宽度，不能缩放-->
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<!--qq浏览器下强制横盘或者竖屏显示-->
+		<meta name="x5-orientation" content="portrait" />
+		<!--qq浏览器下是否可以全屏-->
+		<meta name="x5-fullscreen" content="true" />
+		<!--UC浏览器下强制横盘或者竖屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<!--UC浏览器下是否可以全屏-->
+		<meta name="full-screen" content="yes">
+		<!--是否禁止识别手机和邮箱-->
+		<meta name="format-detection" content="telephone=yes, email=no" />
+		<title>快乐购  搜索</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/happigo.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+		(function(){
+		    	var html = document.documentElement;
+		    	var hWidth = html.getBoundingClientRect().width;
+//		    	console.log( hWidth );
+				html.style.fontSize = hWidth/15 + "px";
+//				1rem
+		    })()
+		</script>
+		<script type="text/javascript" src="js/happigo.js"></script>
+	</head>
+	<body>
+		<nav class="title_nav">
+			<a href="javascript:;" class="back">
+				<img src="img/ico_fh.png"/>
+			</a>
+			<div class="search_input">
+				<span class="icon_s"><img src="img/ico_18.png"/></span>
+				<input type="text" placeholder="618年中庆 康宁五件套低至599"/>
+				<span class="icon_close"><img src="img/ico_26.png"/></span>
+			</div>
+			<a href="javascript:;">
+				<span class="search_sub">搜索</span>
+			</a>
+			<ul class="result_list" id="result">
+				<!--<li>1</li>
+				<li>2</li>
+				<li>2</li>
+				<li>4</li>-->
+			</ul>
+		</nav>
+		<script>
+		$(function(){
+			$('.search_input input').focus(function(){
+				$('.search_input').css({
+					"border-color":"#c31f3a",
+					"border-width":"1px",
+					"border-style":"solid",
+					"box-shadow":"1px 0 1px 0 #c31f3a"
+					});
+			}).blur(function(){
+				$('.search_input').css({
+					"border-color":"transparent",
+					"border-width":"1px",
+					"border-style":"solid",
+					"box-shadow":"1px 0 1px 0 transparent"
+					});
+			});
+			$('.back').on('touchstart',function(){
+				window.location.href = 'index.html';
+			});
+			$('.icon_close').on('touchstart',function(){
+				$('.search_input input').val('');
+			});
+			//接入淘宝ajax返回数据
+			$('.search_input input').keyup(function(){
+				$('#result').css({"display":"block"});
+				$.ajax({
+					type:"get",
+					url:"http://suggest.taobao.com/sug?code=utf-8",
+					async:true,
+					dataType:"jsonp",
+					jsonp:"callback",
+					data:{"q":$('.search_input input').val()},
+					success:function(str){
+//						console.log(str.result);
+						for(var i=0;i<$('#result li').size();i++){
+							$('#result li').remove();
+						}
+						for(var i=0;i<str.result.length;i++){
+							var li = '<li>'+str.result[i][0]+'</li>';
+							$('#result').append(li);
+						}
+					}
+				});
+				if($('.search_input input').val()==''){
+					$('#result').css({"display":"none"});
+					for(var i=0;i<$('#result li').size();i++){
+						$('#result li').remove();
+					}
+				}
+			})
+		});
+			
+		</script>
+		<!--关键词-->
+		<section class="search_word clearfix">
+			<p class="search_title">热门搜索</p>
+			<div class="hot_word">
+				<a href="javascript:;">防晒</a>
+				<a href="javascript:;">面膜</a>
+				<a href="javascript:;">洗发水</a>
+				<a href="javascript:;">牛奶</a>
+				<a href="javascript:;">米</a>
+				<a href="javascript:;">内裤</a>
+				<a href="javascript:;">内衣</a>
+				<a href="javascript:;">唇膏</a>
+				<a href="javascript:;">电饭煲</a>
+				<a href="javascript:;">空调</a>
+				<a href="javascript:;">风扇</a>
+				<a href="javascript:;">橄榄油</a>
+				<a href="javascript:;">豆浆机</a>
+				<a href="javascript:;">双立人</a>
+				<a href="javascript:;">蜂蜜</a>
+				<a href="javascript:;">红酒</a>
+				<a href="javascript:;">净水器</a>
+				<a href="javascript:;">康宁</a>
+				<a href="javascript:;">手表</a>
+				<a href="javascript:;">鞋</a>
+			</div>
+		</section>
+		<script>
+			$(function(){
+				$('.hot_word a').on('touchstart',function(){
+					$('.search_input input').val($(this).text());
+				});
+			});
+		</script>
+		<section class="search_his">
+			<div class="no_his">暂无搜索历史</div>
+		</section>
+	</body>
+</html>

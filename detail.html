@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--视口宽度为设备宽度，不能缩放-->
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<!--qq浏览器下强制横盘或者竖屏显示-->
+		<meta name="x5-orientation" content="portrait" />
+		<!--qq浏览器下是否可以全屏-->
+		<meta name="x5-fullscreen" content="true" />
+		<!--UC浏览器下强制横盘或者竖屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<!--UC浏览器下是否可以全屏-->
+		<meta name="full-screen" content="yes">
+		<!--是否禁止识别手机和邮箱-->
+		<meta name="format-detection" content="telephone=yes, email=no" />
+		<title>快乐购  商品详情</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/happigo.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript">
+		(function(){
+		    	var html = document.documentElement;
+		    	var hWidth = html.getBoundingClientRect().width;
+//		    	console.log( hWidth );
+				html.style.fontSize = hWidth/15 + "px";
+//				1rem
+		    })()
+		</script>
+		<script type="text/javascript" src="js/happigo.js"></script>
+	</head>
+	<body>
+		<nav class="head-icon">
+			<img src="img/return.png" alt="" class="return"/>
+			<img src="img/more_btn.png" alt="" class="more"/>
+		</nav>
+		<script>
+			$(function(){
+				$('.more').on('touchstart',function(){
+					$('.u-menu').slideToggle();
+				})
+				$('.return').on('touchstart',function(){
+					window.location.href = 'index.html';
+				})
+			})
+		</script>
+		<div class="u-menu">
+			<p><a href="index.html"><img src="img/goods_detail/ico_home.png" alt="" />首页</a></p>
+			<p><a href="javascript:;"><img src="img/goods_detail/ico_shop_car.png" alt="" />购物车</a></p>
+			<p><a href="search.html"><img src="img/goods_detail/ico_search.png" alt="" />搜索</a></p>
+			<p><a href="brand.html"><img src="img/goods_detail/ico_class.png" alt="" />分类</a></p>
+		</div>
+		<!--焦点图-->
+		<section class="slide-box">
+			<img src="img/goods_detail/1_05485044365866897_550.jpg"/>
+		</section>
+		<!--商品详情-->
+		<section class="box-bar">
+			<div class="box-pd">
+				<div class="basic-info">
+					<p class="title-text line-clamp2">【韩国·通勤出行防烈日】兰芝自然舒润防晒霜 SPF30/PA++ 50ml</p>
+					<p class="describe-text m-color">植物温和防晒  舒缓干燥肌肤</p>
+					<div class="price-box">
+						<div class="h-price w-color">￥<span>179</span></div>
+						<div class="s-price">￥199</div>
+						<div class="tag" style="display:none;">有赠品</div>
+					</div>
+				</div>
+				<!--促销信息-->
+				<div class="prom-box">
+					<div class="prom-ico fl">
+						<img src="img/goods_detail/dog1.jpg">
+					</div>
+					<div class="prom-main fl">
+						<div class="prom-tag">
+							<p><span>买就返</span>可获179积分,可抵0.9元</p>							
+							<p><span>满包邮</span>在线支付满129免运费</p>							
+						</div>
+					</div>
+					<div class="clearfloat"></div>
+				</div>
+				<!--优惠券-->
+				<div class="coupon-box ">
+					<div class="coup-title fl">领券：</div>
+					<div class="coup-main fl">
+						<!--领取优惠券-->
+						<div>
+							<img src="img/goods_detail/ci_left.png">
+							<p><span>30元优惠券</span></p>
+							<img src="img/goods_detail/ci_right.png">
+						</div>
+						<div>
+							<img src="img/goods_detail/ci_left.png">
+							<p><span>60元优惠券</span></p>
+							<img src="img/goods_detail/ci_right.png">
+						</div>
+						<div>
+							<img src="img/goods_detail/ci_left.png">
+							<p>
+								<span>150元优惠券</span>
+							</p>
+							<img src="img/goods_detail/ci_right.png">
+						</div>			
+					</div>
+					<div class="coup-arrow fl">
+						<img src="img/goods_detail/arrow_right.png">
+					</div>
+					<div class="clearfloat"></div>
+				</div>
+				<!--赠品-->
+			</div>
+		</section>
+		<!--商品参数-->
+		<section class="box-bar">
+			<div class="box-pd2">
+				<div class="parameter-box  parameter1 bline-change1 bline">
+					<div class="param-title fl properties_sp">已选默认</div>
+					<div class="param-ico fl">请选择<img src="img/goods_detail/arrow_right.png"></div>
+					<div class="clearfloat"></div>
+				</div>
+				<div class="parameter-box parameter2 clearfloat">
+					<div class="param-title fl">产品参数</div>
+					<div class="param-ico fl"><img src="img/goods_detail/arrow_right.png"></div>
+				</div>
+			</div>
+		
+		</section>
+		<section class="box-bor">
+			<div class="review">
+				<div class="review-head bline-change1 bline">
+					<div class="revi-title fl">用户评论（5）</div>
+					<div class="revi-pl fl">
+						<span class="m-color">100%</span> 好评
+					</div>
+					<div class="clearfloat"></div>
+				</div>
+				<div class="box-pd">
+					<div class="review-items bline-change1 bline">
+						<div class="us-tx"><img src="img/goods_detail/m832077.jpg"></div>
+						<div class="review-main">
+							<div class="p1">
+								<div class="us_name">刘****</div>
+								<div class="us_time">2017-06-22 22:28:53</div>
+							</div>
+							<div class="p2">兰芝防晒霜真的很润很好用，比花王的好。</div>
+							<div class="p3"><img src="img/goods_detail/x5.png"></div>
+						</div>
+						<div class="clearfloat"></div>
+					</div><div class="review-items bline-change1 bline">
+						<div class="us-tx"><img src="img/goods_detail/tx_4.png"></div>
+						<div class="review-main">
+							<div class="p1">
+								<div class="us_name">MB_****45b</div>
+								<div class="us_time">2017-06-22 22:27:03</div>
+							</div>
+							<div class="p2">和我想要的防晒效果是一样的，很好……</div>
+							<div class="p3"><img src="img/goods_detail/x5.png"></div>
+						</div>
+						<div class="clearfloat"></div>
+					</div>
+					<p class="review-more m-color">查看更多评价&gt;&gt;</p>
+				</div>
+			</div>
+		</section>
+		<!--信息-->
+		<section class="box-bor">
+			<div class="box-pd">
+				<div class="notice-items clearfloat">
+					<div>
+						<img src="img/goods_detail/icon_ensure_fahuo.png"><p>快乐购发货&amp;售后</p>
+					</div>
+					<div>
+						<img src="img/goods_detail/icon_zheng.png"><p>正品行货</p>
+					</div>
+					<div>
+						<img src="img/goods_detail/icon_kefu.png"><p>全天客服</p>
+					</div>
+					<div>
+						<img src="img/goods_detail/icon_tui.png"><p>10天包退</p>
+					</div>
+					<div>
+						<img src="img/goods_detail/icon_fan.png"><p>支付立减</p>
+					</div>
+					<div>
+						<img src="img/goods_detail/icon_you.png"><p>满就包邮</p>
+					</div>		
+				</div>
+		</div>
+	</section>
+	<!--商品信息tab-->
+	<section class="bline-change1 bline">
+		<ul class="tab-ul">
+			<li class="current"><span>图文详情</span></li>
+			<li><span>产品参数</span></li>
+			<li><span>配送与售后</span></li>
+		</ul>
+		<div class="clearfloat"></div>
+	</section>
+	<script>
+		$(function(){
+			$('.tab-ul li').click(function(){
+				console.log(123);
+				$(this).addClass('current').siblings().removeClass('current');
+				$('.tab-main li').eq($(this).index()).fadeIn().siblings().fadeOut();
+			})
+		})
+	</script>
+	<ul class="tab-main">
+	<!--图文详情-->
+		<li>
+			<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/255/221255/1_desc_221255_01_1280.jpg" style="width: 100%; margin-top: 0px; display: inline;">
+			<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/255/221255/1_desc_221255_02_1280.jpg" style="width: 100%; margin-top: 0px; display: inline;">
+			<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/255/221255/1_desc_221255_03_1280.jpg" style="width: 100%; margin-top: 0px; display: inline;">
+			<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/255/221255/1_desc_221255_04_1280.jpg" style="width: 100%; margin-top: 0px; display: inline;">
+			<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/255/221255/1_desc_221255_05_1280.jpg" style="width: 100%; margin-top: 0px; display: inline;">
+			<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/255/221255/1_desc_221255_06_1280.jpg" style="width: 100%; margin-top: 0px; display: inline;">
+			<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/255/221255/1_desc_221255_07_1280.jpg" style="width: 100%; margin-top: 0px; display: inline;">
+			<img src="http://ecimg.happigo.com/data/upload/shop/common/class_1097_caption.jpg" style="width: 100%; margin-top: 0px; display: inline;">
+		</li>
+		<!--产品参数-->
+		<li style="display: none;">
+			<p class="bline-change1 bline"><span class="col-1">品牌</span><span class="col-2">LANEIGE/兰芝</span></p>
+			<p class="bline-change1 bline"><span class="col-1">货号</span><span class="col-2">221255</span></p>
+		</li>
+		<!--配送与售后-->
+		<li style="display: none;">
+			<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/1_05240740086689425.png" style="width:100%;margin-top:0px;">
+			<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/1_05294113291349756.png" style="width:100%;margin-top:0px;">
+		</li>
+	</ul>
+	<!--底部浮动购物车-->
+	<div class="b-space"></div>
+	<div class="bottom tline-change1 tline">
+		<div class="shop_car_cout fl">
+			<img src="img/goods_detail/shop_car_ico.png">
+			<span class="carunmber" style="display:none;"></span>
+		</div>
+		<div class="collect fl">  
+			<img src="img/goods_detail/collect_ico2.png">
+		</div>
+		<div class="buy-car fr clearfloat">
+			<!--有货-->
+			<div class="inStock">
+				<div class="buyBtn fl" style="float: right">立即购买</div>
+			</div>
+			<!--无货-->
+		</div>
+		<div class="clearfloat"></div>
+	</div>
+	<div class="fixedBox format-pop">
+		<div class="fixed-bg"></div>
+		<div class="fixed-main">
+			<img class="fixed-close" src="img/goods_detail/close.png">
+			<!--商品信息-->
+			<div class="format-goods bline-change1 bline">
+				<div class="f-g-img fl">
+					<img src="http://ecimg.happigo.com/data/upload/shop/store/goods/1/444/222944/1_05514573589505021_550.jpg">
+					
+				</div>
+				<div class="f-g-info fl">
+					<p>RE:CIPE 水晶防晒喷雾spf50 150ml 户外全身防水防晒霜男女宝宝可</p>
+					<span class="m-color">￥89</span>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+			<div class="box-pd">
+				<div style="height:260px;">
+				<!--选规格-->
+					<div class="format-select bline-change1 bline" style="display:none;">
+					<p>颜色</p>
+					<div class="clearfloat s0">
+						<span class="spec s-gary" attrid="4004" dataid="1:4004">默认</span>
+					</div>
+					<p>尺码</p>
+					<div class="clearfloat s1">
+						<span class="spec s-gary" attrid="4005" dataid="15:4005">默认</span>
+					</div>
+				</div>
+				<!--选购数量-->
+				<div class="shop-num bline-change1 bline">
+					<div class="buy-num fl">数量：<span class="m-color" style="display:none;">（单笔限购2件）</span></div>
+					<div class="buy-btn fr">
+						<img class="lessbtn disabled" src="img/goods_detail/buy_ico1.png">
+							<span>1</span>
+							<img class="addbtn" src="img/goods_detail/buy_ico2.png">
+					</div>
+					<!--增加样式"disabled"禁用按钮-->
+					<div class="clearfloat"></div>
+				</div>
+					</div>
+				<!--提交按钮-->
+	
+				<div class="shop-btn">
+					<div class="clearfloat" style="display:block">
+						<div class="shop-buybtn fr" style="float:right">立即购买</div>
+					<div class="shop-addcar fr">加入购物车</div>				</div>
+					<div class="shop-max-btn" style="display: none;">到货通知<!--确定--></div>
+				</div>
+				</div>
+	
+			</div>
+		</div>
+	<script>
+		$(function(){
+			$(window).scroll(function(){
+//				console.log($(this).scrollTop());
+				if($(this).scrollTop()>1070){
+					$('.tab-ul').addClass('fixed-top');
+				}else{
+					$('.tab-ul').removeClass('fixed-top');
+				}
+			});
+			$('.buyBtn').on('touchstart',function(){
+				$('.fixed-bg').css('display','block');
+				$('.fixed-main').addClass('fixed-main-show');
+			})
+			$('.parameter-box').on('touchstart',function(){
+				$('.fixed-bg').css('display','block');
+				$('.fixed-main').addClass('fixed-main-show');
+			})
+			$('.fixed-close').on('touchstart',function(){
+				$('.fixed-bg').css('display','none');
+				$('.fixed-main').removeClass('fixed-main-show');
+			})
+			$('.fixed-bg').on('touchstart',function(){
+				$('.fixed-bg').css('display','none');
+				$('.fixed-main').removeClass('fixed-main-show');
+			})
+		})
+	</script>
+	</body>
+</html>

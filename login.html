@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--视口宽度为设备宽度，不能缩放-->
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<!--qq浏览器下强制横盘或者竖屏显示-->
+		<meta name="x5-orientation" content="portrait" />
+		<!--qq浏览器下是否可以全屏-->
+		<meta name="x5-fullscreen" content="true" />
+		<!--UC浏览器下强制横盘或者竖屏显示-->
+		<meta name="screen-orientation" content="portrait">
+		<!--UC浏览器下是否可以全屏-->
+		<meta name="full-screen" content="yes">
+		<!--是否禁止识别手机和邮箱-->
+		<meta name="format-detection" content="telephone=yes, email=no" />
+		<title>快乐购  用户登录</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/com.css" />
+		<link rel="stylesheet" type="text/css" href="css/happigo.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+		(function(){
+		    	var html = document.documentElement;
+		    	var hWidth = html.getBoundingClientRect().width;
+//		    	console.log( hWidth );
+				html.style.fontSize = hWidth/15 + "px";
+//				1rem
+		    })()
+		</script>
+		<script type="text/javascript" src="js/happigo.js"></script>
+	</head>
+	<body class="bg">
+		<nav class="title_nav">
+			<a href="index.html">
+				<img src="img/ico_fh.png"/>
+			</a>
+			<p class="txt">登录</p>
+		</nav>
+		<!--关键词-->
+		<section class="login_box">
+			<div class="reg_box" id="log_form">
+				<div class="user">
+					<span class="icon_ph"><img src="img/ico_mob.png"/></span>
+					<input type="text" name="" placeholder="请输入手机号" />
+					<span class="input_tip"></span>
+				</div>
+				<div class="pwd">
+					<span class="icon_pwd"><img src="img/ico_lock.png"/></span>
+					<input type="password" name="" placeholder="请输入密码" id="password"/>
+					<span class="eye"><img src="img/eye1.png"/></span>
+					<span class="input_tip"></span>
+					<script>
+						$(function(){
+							//用于密码校验查看
+							var change = false;
+							$('.eye').on('touchstart',function(){
+								if(!change){
+									$('#password').attr('type','text');
+									$('.eye img').attr('src','img/eye2.png');
+								}else{
+									$('#password').attr('type','password');
+									$('.eye img').attr('src','img/eye1.png');
+								}
+								change = !change;
+							});
+						});
+					</script>
+				</div>
+				<div class="img_code clearfix">
+					<span class="icon_code"><img src="img/ico_tx.png"/></span>
+					<input type="text" name="" placeholder="请输入图形验证码" />
+					<canvas id="canvas" class="code"></canvas>
+					<!--<span class="input_tip"></span>-->
+					<script src="js/canvas_code.js" type="text/javascript" charset="utf-8"></script>
+				</div>
+				<div class="forget">
+					<a href="javascript:;" class="pull-right">忘记密码?</a>
+					<p class="tip_info"></p>
+				</div>
+				<button class="btn_log btn_on">登录</button>
+				<button class="btn_reg">注册</button>
+				<script>
+					$(function(){
+						//判断手机号是否正确
+						$('#log_form input').eq(0).keyup(function(){
+							if(!(/^1[34578]\d{9}$/.test($('#log_form input').eq(0).val()))){
+								$('.input_tip').eq(0).addClass('wrong').removeClass('correct');
+
+							}else{
+								$('.input_tip').eq(0).addClass('correct').removeClass('wrong');
+							}
+						});
+						//判断密码位数是否足够
+						$('#log_form input').eq(1).keyup(function(){
+							if($('#log_form input').eq(1).val().length<6){
+								$('.input_tip').eq(1).addClass('wrong').removeClass('correct');
+
+							}else{
+								$('.input_tip').eq(1).addClass('correct').removeClass('wrong');
+							}
+						});
+						//跳转到注册页面
+						$('.btn_reg').on('touchstart',function(){
+							window.location.href = 'register.html';
+						});
+					});
+				</script>
+			</div>
+		</section>
+		<section class="other_login">
+			<ul class="clearfix">
+				<li>
+					<a href="javascript:;">
+						<img src="img/ico_dl_qq.png" alt="" />
+						<p>QQ登录</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/ico_dl_wb.png" alt="" />
+						<p>微博登录</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/ico_dl_zfb.png" alt="" />
+						<p>支付宝登录</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<section class="login_bottom">
+			<p>遇到问题？请联系客服: <a href="tel:400-705-1111">400-705-1111</a></p>
+		</section>
+		<script>
+			$(function(){
+				var code = changeCode();
+				//图片验证码切换
+				$('.code').on('touchstart',function(){
+					code = changeCode();
+//					console.log(code);
+				});
+				//进入页面就打开数据库
+				var db = openDatabase('happigodb','1.0','text db','1024*1024');
+				//点击登录时操作
+				$('.btn_log').on('touchstart',function(){
+					//获取表单填写的信息
+					var phone = $('#log_form input').eq(0).val();
+					var pwd = $('#log_form input').eq(1).val();
+					var pCode = $('#log_form input').eq(2).val();
+					//判断是否都有输入					
+					if(phone&&pCode&&pwd){
+						//判断验证码是否正确
+						if(pCode!=code){							
+							messageTip('.tip_info','验证码填写有误！');
+						}else{
+							//信息填写完整才获取查询数据
+							db.transaction(function(contex){
+								//向数据库发送查询请求
+								contex.executeSql('select * from userinfo',[],function(con,data){
+									var len = data.rows.length,i;
+									for(var i=0;i<len;i++){
+										//验证用户是否匹配存在
+//										(function(j){
+											console.log(data.rows.item(i).phone+':'+data.rows.item(i).password);
+											if(phone==data.rows.item(i).phone&&pwd==data.rows.item(i).password){
+												//登录成功,存一个session用于判断用户没有离开
+												window.sessionStorage.setItem('userphone',phone);
+												$('.btn_log').html('登录中...');
+												//跳转到用户页面
+												setTimeout(function(){
+													window.location.href = 'user.html';
+												},3000);
+												return false;
+//												break;
+											}
+//										})(i);
+
+									}
+									messageTip('.tip_info','用户不存在或密码有误！');
+								
+								});
+							});
+						}
+					}else{
+						if(!pCode){
+							messageTip('.tip_info','验证码不能为空！');
+						}
+						if(!pwd){							
+							messageTip('.tip_info','密码未填写！');
+						}
+						if(!phone){		
+							messageTip('.tip_info','手机号未填写！');
+						}
+					}
+					
+				});
+				//提示信息函数
+				function messageTip(msgbox,msgtext){
+					$(msgbox).animate({"bottom":-20/50+"rem","opacity":1}).text(msgtext);
+					setTimeout(function(){
+						$('.tip_info').animate({"bottom":-40/50+"rem","opacity":0});
+					},3000);
+				}
+			});
+		</script>
+	</body>
+</html>
